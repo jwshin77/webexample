@@ -9,28 +9,28 @@ server:
 ## test profile ##
 spring:
   profiles: test
-#  h2:
-#    console:
-#      enabled: true
-#      path: /h2-console # h2 console url ¿¡ Á¢±ÙÇÏ±â À§ÇÑ °ª. : `localhost:8099/test_db` ·Î Á¢±Ù °¡´É
+  #  h2:
+  #    console:
+  #      enabled: true
+  #      path: /h2-console # h2 console url ì— ì ‘ê·¼í•˜ê¸° ìœ„í•œ ê°’. : `localhost:8099/test_db` ë¡œ ì ‘ê·¼ ê°€ëŠ¥
   datasource:
-#    driver-class-name: org.h2.Driver # h2 µå¶óÀÌ¹ö ¼³Á¤
-    driver-class-name: org.mariadb.jdbc.Driver # maridDB µå¶óÀÌ¹ö ¼³Á¤
-    #url: jdbc:h2:mem:testdb # jdbc url ¼³Á¤ (in-memory db ¼³Á¤)
+    #    driver-class-name: org.h2.Driver # h2 ë“œë¼ì´ë²„ ì„¤ì •
+    driver-class-name: org.mariadb.jdbc.Driver # maridDB ë“œë¼ì´ë²„ ì„¤ì •
+    #url: jdbc:h2:mem:testdb # jdbc url ì„¤ì • (in-memory db ì„¤ì •)
     url: jdbc:mariadb://jwshin77.iptime.org:3307/webexample
     username: webexample
     password: Webexample12345678!
-#    initialization-mode: always # datasource ¸¦ Å¸ÀÔ(h2, mysql, oracle, ...) ¿¡ »ó°ü¾øÀÌ Ç×»ó ÃÊ±âÈ­ÇÑ´Ù.
-#    platform: h2 # datasource Å¸ÀÔ ÇÃ·§Æû Á¤ÀÇ
+    #    initialization-mode: always # datasource ë¥¼ íƒ€ì…(h2, mysql, oracle, ...) ì— ìƒê´€ì—†ì´ í•­ìƒ ì´ˆê¸°í™”í•œë‹¤.
+    #    platform: h2 # datasource íƒ€ì… í”Œë«í¼ ì •ì˜
 
-    # .sql ÆÄÀÏÀ» classpath ÇÏÀ§·Î µÎ°í, Æ¯Á¤ µğ·ºÅä¸® ¾Æ·¡¿¡¼­ ½ÇÇà½ÃÅ³ ¼ö ÀÖ´Ù.
-    # schema: classpath:db/h2/schema.sql # spring boot startup ½Ã, Æ¯Á¤ °æ·ÎÀÇ schema.sql ½ÇÇà
-    # data: classpath:db/h2/data.sql # spring boot startup ½Ã, Æ¯Á¤ °æ·ÎÀÇ data.sql ½ÇÇà
+    # .sql íŒŒì¼ì„ classpath í•˜ìœ„ë¡œ ë‘ê³ , íŠ¹ì • ë””ë ‰í† ë¦¬ ì•„ë˜ì—ì„œ ì‹¤í–‰ì‹œí‚¬ ìˆ˜ ìˆë‹¤.
+    # schema: classpath:db/h2/schema.sql # spring boot startup ì‹œ, íŠ¹ì • ê²½ë¡œì˜ schema.sql ì‹¤í–‰
+    # data: classpath:db/h2/data.sql # spring boot startup ì‹œ, íŠ¹ì • ê²½ë¡œì˜ data.sql ì‹¤í–‰
   jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
+    #    database-platform: org.hibernate.dialect.H2Dialect
     hibernate:
-      ddl-auto: none # ddl ¿É¼ÇÀ» ¹«¾ùÀ¸·Î ÇÒ °ÍÀÎÁö (none | create-drop | create | update | validate)
-    generate-ddl: true # true ¼³Á¤ ½Ã, ÇØ´ç µ¥ÀÌÅÍ¸¦ ±Ù°Å·Î ¼­¹ö ½ÃÀÛ ½ÃÁ¡¿¡ DDL ¹® »ı¼ºÇÏ¿© DB ¿¡ Àû¿ë (ddl »ı¼º¿É¼Ç ¸µÅ©)
-    show-sql: true # true ¼³Á¤ ½Ã, ÄÜ¼Ö¿¡ JPA Äõ¸®¸¦ º¸¿©ÁØ´Ù.
-    properties.hibernate.format_sql: true # true ¼³Á¤ ½Ã, ÄÜ¼Ö¿¡ Ç¥½ÃµÇ´Â Äõ¸®¸¦ °¡µ¶¼ºÀÖ°Ô º¸¿©ÁØ´Ù.
-    properties.hibernate.use_sql_comments: false # true ¼³Á¤ ½Ã, ÄÜ¼Ö¿¡ Ç¥½ÃµÇ´Â Äõ¸®¹® À§¿¡ ¾î¶² ½ÇÇàÀ» ÇÏ·Á´ÂÁö hint ¸¦ º¸¿©ÁØ´Ù.
+      ddl-auto: none # ddl ì˜µì…˜ì„ ë¬´ì—‡ìœ¼ë¡œ í•  ê²ƒì¸ì§€ (none | create-drop | create | update | validate)
+    generate-ddl: true # true ì„¤ì • ì‹œ, í•´ë‹¹ ë°ì´í„°ë¥¼ ê·¼ê±°ë¡œ ì„œë²„ ì‹œì‘ ì‹œì ì— DDL ë¬¸ ìƒì„±í•˜ì—¬ DB ì— ì ìš© (ddl ìƒì„±ì˜µì…˜ ë§í¬)
+    show-sql: true # true ì„¤ì • ì‹œ, ì½˜ì†”ì— JPA ì¿¼ë¦¬ë¥¼ ë³´ì—¬ì¤€ë‹¤.
+    properties.hibernate.format_sql: true # true ì„¤ì • ì‹œ, ì½˜ì†”ì— í‘œì‹œë˜ëŠ” ì¿¼ë¦¬ë¥¼ ê°€ë…ì„±ìˆê²Œ ë³´ì—¬ì¤€ë‹¤.
+    properties.hibernate.use_sql_comments: false # true ì„¤ì • ì‹œ, ì½˜ì†”ì— í‘œì‹œë˜ëŠ” ì¿¼ë¦¬ë¬¸ ìœ„ì— ì–´ë–¤ ì‹¤í–‰ì„ í•˜ë ¤ëŠ”ì§€ hint ë¥¼ ë³´ì—¬ì¤€ë‹¤.
